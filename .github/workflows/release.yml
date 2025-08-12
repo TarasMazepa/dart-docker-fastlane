@@ -15,4 +15,4 @@ jobs:
       - uses: docker/setup-buildx-action@v3
       - run: docker login -u taras0mazepa -p ${{ secrets.DOCKER_PAT }}
       - run: docker buildx build --platform linux/amd64,linux/arm64 -t taras0mazepa/dart-fastlane:$(jq -r '.stable.version' ../../versions.json) --push .
-        working-directory: stable/bookworm
+        working-directory: stable/trixie
